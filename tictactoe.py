@@ -222,7 +222,8 @@ def max_value(board):
         if value > v:
             v = value
             best_action = action
-
+            if v == 1:
+                return [v, best_action]
     return [v,best_action]
     
 def min_value(board):
@@ -238,8 +239,11 @@ def min_value(board):
         value = max_value(updated_board)[0]
         print("Min Value:", value, "Action:", action)
         if value < v:
+            
             v = value
             best_action = action
+            if v == -1:
+                return [v, best_action]
 
     return [v, best_action]
 
